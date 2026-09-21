@@ -1,0 +1,11 @@
+{
+  "manifest_version": 3,
+  "name": "YouTube Studio AI Image Swap",
+  "version": "0.1.0",
+  "description": "YouTube StudioのAI生成画像を検出・保存し、選択した画像で差し替える補助ツール。",
+  "permissions": ["downloads","activeTab"],
+  "host_permissions": ["https://studio.youtube.com/*","https://*.googleusercontent.com/*","https://i.ytimg.com/*"],
+  "action": {"default_title":"YT AI Image Swap","default_popup":"popup.html"},
+  "content_scripts": [{"matches":["https://studio.youtube.com/*"],"js":["content.js"],"run_at":"document_idle"}],
+  "background": {"service_worker":"background.js"}
+}
